@@ -1,0 +1,12 @@
+graphql:
+  servlet:
+    mapping: /student-service
+
+postgres:
+  spring:
+    datasource:
+      platform: postgres
+      username: postgres
+      password: user
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://localhost:5432/TESTDB
