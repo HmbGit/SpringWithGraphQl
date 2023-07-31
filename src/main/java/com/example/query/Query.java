@@ -1,12 +1,17 @@
 package com.example.query;
 
 import com.example.domain.Student;
+import com.example.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
 @Component
 public class Query implements GraphQLQueryResolver {
+
+	@Autowired
+	private StudentService studentService;
 
 	public String firstQuery () {
 		return "First Query";
@@ -20,8 +25,8 @@ public class Query implements GraphQLQueryResolver {
 		return firstName + " "+ lastName;
 	}
 
-	public String getStudent(Student student){
+	public Student getStudent(Long id){
 
-		return student.getFirstName() + " " + student.getLastName();
+		return studentService.getStudent(id);
 	}
 }
