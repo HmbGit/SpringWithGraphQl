@@ -1,6 +1,7 @@
 package com.example.query;
 
 import com.example.domain.Student;
+import com.example.response.StudentResponse;
 import com.example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,8 +26,8 @@ public class Query implements GraphQLQueryResolver {
 		return firstName + " "+ lastName;
 	}
 
-	public Student getStudent(Long id){
+	public StudentResponse getStudent(Long id){
 
-		return studentService.getStudent(id);
+		return new StudentResponse(studentService.getStudent(id));
 	}
 }

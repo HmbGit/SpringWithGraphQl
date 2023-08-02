@@ -3,6 +3,7 @@ package com.example.domain;
 
 import lombok.*;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Student {
+public class Student implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
