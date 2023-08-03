@@ -4,6 +4,7 @@ package com.example.domain;
 import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,4 +30,8 @@ public class Student implements Serializable {
 
     @Column(name = "address")
     private String address;
+
+
+    @OneToMany(mappedBy = "student")
+    private List<Subjects> listSubjects;
 }
