@@ -2,11 +2,17 @@ type Query {
 	firstQuery : String
 	secondQuery : String
 	fullName(firstName: String,lastName: String) : String
-	student(id: ID):StudentResponse
+	student(id: ID): StudentResponse
 }
 
 type StudentResponse{
 	firstName: String!
 	lastName: String
 	id: ID
+	listSubjects: [SubjectsResponse]
+}
+
+type SubjectsResponse{
+	id: ID
+	subject: String
 }
