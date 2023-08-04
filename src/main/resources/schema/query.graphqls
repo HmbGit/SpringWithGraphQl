@@ -9,10 +9,16 @@ type StudentResponse{
 	firstName: String!
 	lastName: String
 	id: ID
-	listSubjects: [SubjectsResponse]
+	listSubjects(subjectNameEnum: SubjectNameEnum): [SubjectsResponse]
 }
 
 type SubjectsResponse{
 	id: ID
 	subject: String
+}
+enum  SubjectNameEnum{
+	ALL,
+	JAVA,
+	SQL,
+	MONGODB
 }
